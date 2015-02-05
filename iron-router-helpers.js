@@ -36,7 +36,7 @@ var routeUtils = {
 
     testRoutes: function(routeNames) {
         var reg = this.regex(routeNames);
-        return this.context() && reg.test(this.context().route.name);
+        return this.context() && this.context().route && this.context().route.getName && reg.test(this.context().route.getName());
     },
 
     testPaths: function(paths) {
